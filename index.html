@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hesami Skincare | زیبایی از مراقبت شروع می‌شود</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #fbf6f1;
+  --pink: #ead2ca;
+  --rose: #b77e75;
+  --brown: #4c3937;
+  --muted: #8b7771;
+  --white: #fffdfb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Vazirmatn", sans-serif;
+  color: var(--brown);
+  background:
+    radial-gradient(circle at 10% 15%, #f0dcd5, transparent 350px),
+    radial-gradient(circle at 95% 90%, #eaded1, transparent 300px),
+    var(--cream);
+}
+
+button, a { font: inherit; }
+
+.topbar {
+  max-width: 1120px;
+  margin: auto;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--pink);
+  color: #80554e;
+  font-size: 25px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 800;
+  direction: ltr;
+  display: block;
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.topbar a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 25px 22px 50px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.visual {
+  min-height: 510px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 180px 180px 25px 25px;
+  background:
+    linear-gradient(to top, rgba(48,30,27,.55), transparent 60%),
+    url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85")
+    center / cover;
+  box-shadow: 0 24px 70px rgba(111,72,62,.15);
+}
+
+.stamp {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255,250,246,.92);
+  color: #80554e;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.9;
+  direction: ltr;
+}
+
+.visual-text {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  color: white;
+  font-size: 25px;
+  line-height: 1.8;
+}
+
+.eyebrow {
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.content { padding: 20px 0; }
+
+.flower {
+  color: var(--rose);
+  font-size: 24px;
+}
+
+h1 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.65;
+  margin: 12px 0;
+  font-weight: 800;
+}
+
+.intro {
+  color: var(--muted);
+  line-height: 2.2;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.progress {
+  height: 4px;
+  border-radius: 20px;
+  background: #eaded7;
+  margin-bottom: 27px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 33.33%;
+  height: 100%;
+  background: var(--rose);
+  transition: width .3s;
+}
+
+.step-label {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: -19px;
+  margin-bottom: 18px;
+}
+
+.panel {
+  animation: appear .35s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel h2 {
+  font-size: 21px;
+  line-height: 1.9;
+  margin: 0 0 8px;
+}
+
+.panel-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2.2;
+  margin-bottom: 22px;
+}
+
+.primary {
+  width: 100%;
+  min-height: 58px;
+  border: none;
+  border-radius: 16px;
+  background: var(--brown);
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: .25s;
+  box-shadow: 0 10px 24px rgba(76,57,55,.12);
+}
+
+.primary:hover {
+  background: #71504a;
+  transform: translateY(-2px);
+}
+
+.back {
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding: 16px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.skin-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.skin-option {
+  min-height: 125px;
+  padding: 12px 5px;
+  border-radius: 17px;
+  border: 1px solid #eadbd4;
+  background: rgba(255,253,251,.8);
+  color: var(--brown);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: .2s;
+}
+
+.skin-option:hover {
+  background: #f4e5df;
+  border-color: var(--rose);
+  transform: translateY(-3px);
+}
+
+.skin-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f3e4dd;
+  font-size: 21px;
+}
+
+.skin-option strong { font-size: 13px; }
+
+.skin-option small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.result-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1dfd7;
+  color: var(--rose);
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.quote {
+  border-right: 3px solid var(--rose);
+  padding: 5px 15px 5px 0;
+  color: #725b55;
+  line-height: 2.2;
+  font-size: 13px;
+  margin: 20px 0;
+}
+
+.note {
+  font-size: 11px;
+  line-height: 2;
+  color: #9a8882;
+}
+
+footer {
+  text-align: center;
+  color: #9b8983;
+  font-size: 11px;
+  padding: 18px;
+}
+
+.heart { color: var(--rose); }
+
+@media (max-width: 760px) {
+  .topbar { padding: 16px; }
+  main { padding: 10px 18px 30px; }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .visual {
+    min-height: 245px;
+    border-radius: 100px 100px 22px 22px;
+    background-position: center 43%;
+  }
+  .stamp {
+    width: 72px;
+    height: 72px;
+    top: 14px;
+    left: 14px;
+    font-size: 9px;
+  }
+  .visual-text {
+    font-size: 21px;
+    right: 20px;
+    bottom: 12px;
+  }
+  .content { padding-top: 5px; }
+  h1 { font-size: 32px; }
+  .intro { font-size: 13px; }
+  .panel h2 { font-size: 19px; }
+  .skin-options { gap: 7px; }
+  .skin-option { min-height: 112px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">✿</div>
+    <div>
+      <span class="brand-name">HESAMI SKINCARE</span>
+      <span class="brand-sub">زیبایی از مراقبت شروع می‌شود</span>
+    </div>
+  </div>
+
+  <a href="https://www.instagram.com/hesami.skincare/"
+     target="_blank" rel="noopener noreferrer">
+    اینستاگرام ↗
+  </a>
+</header>
+
+<main>
+  <div class="layout">
+
+    <section class="visual">
+      <div class="stamp">
+        A LITTLE<br>SELF-CARE<br>GOES A LONG WAY ✧
+      </div>
+
+      <div class="visual-text">
+        به پوستت عشق<br>
+        و فرصت درخشیدن بده.
+      </div>
+    </section>
+
+    <section class="content" aria-live="polite">
+      <div class="flower">✳</div>
+      <div class="eyebrow">یک شروع لطیف برای تو</div>
+
+      <h1>
+        زیبایی پوستت،<br>
+        از مراقبت شروع می‌شه.
+      </h1>
+
+      <p class="intro">
+        هر پوستی داستان خودش رو داره.
+        بیا با یک قدم کوچیک شروع کنیم تا بهتر با
+        نیازهای پوستت آشنا بشی و مسیر مراقبت از
+        خودت رو پیدا کنی.
+      </p>
+
+      <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="step-label" id="stepLabel">مرحله ۱ از ۳</div>
+
+      <div class="panel" id="stepContent">
+        <h2>دوست داری پوستی سالم، شاداب و درخشان داشته باشی؟</h2>
+
+        <p class="panel-desc">
+          یک لحظه برای خودت وقت بذار؛ مراقبت از پوست
+          می‌تونه از همین‌جا شروع بشه. 🤍
+        </p>
+
+        <button class="primary" onclick="showSkinTypes()">
+          آره، بریم شروع کنیم <span>←</span>
+        </button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  با عشق برای لحظه‌های مراقبت از خودت
+  <span class="heart">♥</span>
+  · Hesami Skincare
+</footer>
+
+<script>
+const content = document.getElementById("stepContent");
+const progressBar = document.getElementById("progressBar");
+const stepLabel = document.getElementById("stepLabel");
+
+function updateProgress(step) {
+  progressBar.style.width = {
+    1: "33.33%",
+    2: "66.66%",
+    3: "100%"
+  }[step];
+
+  stepLabel.textContent = `مرحله ${step} از ۳`;
+}
+
+function showSkinTypes() {
+  updateProgress(2);
+
+  content.innerHTML = `
+    <h2>نوع پوستت رو بهم می‌گی؟</h2>
+
+    <p class="panel-desc">
+      هر نوع پوست نیازهای مخصوص خودش رو داره.
+      کدوم گزینه بیشتر به پوستت شبیهه؟
+    </p>
+
+    <div class="skin-options">
+      <button class="skin-option" onclick="showResult('خشک')">
+        <span class="skin-icon">🌷</span>
+        <strong>خشک</strong>
+        <small>نیازمند رطوبت</small>
+      </button>
+
+      <button class="skin-option" onclick="showResult('چرب')">
+        <span class="skin-icon">💧</span>
+        <strong>چرب</strong>
+        <small>مراقبت متعادل</small>
+      </button>
+
+      <button class="skin-option" onclick="showResult('مختلط')">
+        <span class="skin-icon">🌿</span>
+        <strong>مختلط</strong>
+        <small>نیازهای متنوع</small>
+      </button>
+    </div>
+
+    <button class="back" onclick="restart()">
+      برگشت به مرحله قبل
+    </button>
+  `;
+}
+
+function showResult(skin) {
+  updateProgress(3);
+
+  const instagram =
+    "https://www.instagram.com/hesami.skincare/";
+
+  content.innerHTML = `
+    <div class="result-icon">♡</div>
+
+    <h2>مراقبت از پوستت، وقتشه! ✨</h2>
+
+    <p class="panel-desc">
+      پوستت هر نوعی که باشه، لایق توجه و مراقبت
+      ملایمه. زیبایی واقعی از شناخت نیازهای پوست
+      و انتخاب مراقبت مناسب شروع می‌شه.
+    </p>
+
+    <div class="quote">
+      «قرار نیست پوستت بی‌نقص باشه؛ قراره با
+      شناخت بهترش، با عشق بیشتری ازش مراقبت کنی.»
+    </div>
+
+    <p class="panel-desc">
+      <strong>نوع پوست انتخابی تو: ${skin}</strong><br>
+      برای مشاوره و رزرو خدمات فیشال، از طریق
+      اینستاگرام پیام بده.
+    </p>
+
+    <a class="primary" href="${instagram}"
+       target="_blank" rel="noopener noreferrer">
+      مشاوره و رزرو فیشال در اینستاگرام ↗
+    </a>
+
+    <p class="note">
+      آیدی اینستاگرام: <strong>hesami.skincare</strong><br>
+      این انتخاب صرفاً برای شروع مشاوره است و
+      تشخیص تخصصی نوع پوست محسوب نمی‌شود.
+    </p>
+
+    <button class="back" onclick="showSkinTypes()">
+      تغییر نوع پوست
+    </button>
+  `;
+}
+
+function restart() {
+  updateProgress(1);
+
+  content.innerHTML = `
+    <h2>دوست داری پوستی سالم، شاداب و درخشان داشته باشی؟</h2>
+
+    <p class="panel-desc">
+      یک لحظه برای خودت وقت بذار؛ مراقبت از پوست
+      می‌تونه از همین‌جا شروع بشه. 🤍
+    </p>
+
+    <button class="primary" onclick="showSkinTypes()">
+      آره، بریم شروع کنیم ←
+    </button>
+  `;
+}
+</script>
+
+</body>
+</html>
